@@ -21,17 +21,27 @@
             </nav>
         </header>
         <main>
-            <h2>Login Form</h2>
+            <h2>Post Video</h2>
             <form>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" 
-                placeholder="username">
+                <label for="videoUpload">Upload Video</label>
+                <input type = "file" name = "upload" accept = "video/*" />
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" 
-                placeholder="password">
+                <label for="postTitle">Title</label>
+                <input type="text" name="postTitle" id="postTitle" 
+                placeholder="Enter Title">
 
-                <input type="submit" value="Log in">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" 
+                placeholder="Enter Description">
+
+                <p>By checking the box below, you agree to the following</p>
+
+                <input type="checkbox" id="aup" name="aup" value="aup">
+                <label for="aup"> 
+                    <a href="url">Terms and Conditions</a> 
+                </label><br>
+
+                <input type="submit" value="Post Video">
             </form>
         </main>
 

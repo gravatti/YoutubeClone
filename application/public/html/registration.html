@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log in</title>
+        <title>Registration</title>
     </head>
     <body>
         <header>
@@ -21,17 +21,36 @@
             </nav>
         </header>
         <main>
-            <h2>Login Form</h2>
+            <h2>Registration Form</h2>
             <form>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" 
+                placeholder="Email">
+
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" 
-                placeholder="username">
+                placeholder="Username">
 
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" 
-                placeholder="password">
+                placeholder="Password">
 
-                <input type="submit" value="Log in">
+                <label for="confirmpassword">Password</label>
+                <input type="password" name="confirmpassword" id="confirmpassword" 
+                placeholder="Confirm Password">
+
+                <br>
+
+                <input type="checkbox" id="ageverif" name="ageverif" value="ageverif">
+                <label for="ageverif"> Are you at least 13 years of age?</label><br>
+
+                <input type="checkbox" id="tos" name="tos" value="tos">
+                <label for="tos"> I agree to the 
+                    <a href="url">Terms of Service</a>
+                </label><br>
+
+                <input type="submit" value="Register User">
+
             </form>
         </main>
 

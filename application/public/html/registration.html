@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
         <title>Registration</title>
     </head>
     <body>
@@ -23,21 +24,33 @@
         <main>
             <h2>Registration Form</h2>
             <form>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" 
-                placeholder="Email">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" 
+                    placeholder="Email">
+                </div>
 
+                <div>
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" 
-                placeholder="Username">
+                <input
+                    class="input-text" 
+                    type="text"
+                    name="username" 
+                    id="username" 
+                    placeholder="Username">
+                </div>
 
+                <div>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" 
+                <input class="input-text" type="password" name="password" id="password" 
                 placeholder="Password">
+                </div>
 
-                <label for="confirmpassword">Password</label>
-                <input type="password" name="confirmpassword" id="confirmpassword" 
+                <div>
+                <label for="confirmpassword">Confirm Password</label>
+                <input class="input-text" type="password" name="confirmpassword" id="confirmpassword" 
                 placeholder="Confirm Password">
+                </div>
 
                 <br>
 

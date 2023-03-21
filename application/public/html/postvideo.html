@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
         <title>Log in</title>
     </head>
     <body>
@@ -23,31 +24,41 @@
         <main>
             <h2>Post Video</h2>
             <form>
-                <label for="videoUpload">Upload Video</label>
-                <input type = "file" name = "upload" accept = "video/*" />
+                <div>
+                    <label for="videoUpload">Upload Video</label>
+                    <input class="form-button" type = "file" name = "upload" accept = "video/*" />
+                </div>
 
-                <label for="postTitle">Title</label>
-                <input type="text" name="postTitle" id="postTitle" 
-                placeholder="Enter Title">
+                <div class="input-group">
+                    <label for="postTitle">Title</label>
+                    <input class="input-text" type="text" name="postTitle" id="postTitle" 
+                    placeholder="Enter Title">
+                </div>
 
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description" 
-                placeholder="Enter Description">
+                <div class="input-group">
+                    <label for="description">Description</label>
+                    <input class="input-text" type="text" name="description" id="description" 
+                    placeholder="Enter Description">
+                </div>
 
-                <p>By checking the box below, you agree to the following</p>
+                <div>
+                    <p>By checking the box below, you agree to the following</p>
 
-                <input type="checkbox" id="aup" name="aup" value="aup">
-                <label for="aup"> 
+                    <input type="checkbox" id="aup" name="aup" value="aup">
+                    <label for="aup"> 
                     <a href="url">Terms and Conditions</a> 
-                </label><br>
+                </label>
+                </div>
 
-                <input type="submit" value="Post Video">
+                <div>
+                    <input class="form-button submit-button" type="submit" value="Post Video">
+                </div>
             </form>
         </main>
 
 
 
-        <footer>
+        <footer class="site-footer">
             Ishmael Gravatt &copy; 2023
         </footer>
     </body>

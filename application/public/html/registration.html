@@ -26,11 +26,15 @@
             <form>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" 
+                    <input
+                    class="input-text"
+                    type="text" 
+                    name="email" 
+                    id="email" 
                     placeholder="Email">
                 </div>
 
-                <div>
+                <div class="input-group">
                 <label for="username">Username</label>
                 <input
                     class="input-text" 
@@ -40,36 +44,57 @@
                     placeholder="Username">
                 </div>
 
-                <div>
+                <div class="input-group">
                 <label for="password">Password</label>
-                <input class="input-text" type="password" name="password" id="password" 
+                <input 
+                class="input-text" 
+                type="password" 
+                name="password" 
+                id="password" 
                 placeholder="Password">
                 </div>
 
-                <div>
+                <div class="input-group">
                 <label for="confirmpassword">Confirm Password</label>
-                <input class="input-text" type="password" name="confirmpassword" id="confirmpassword" 
+                <input 
+                class="input-text" 
+                type="password" 
+                name="confirmpassword" 
+                id="confirmpassword" 
                 placeholder="Confirm Password">
                 </div>
 
-                <br>
+                <div class="checkbox-group">
+                <input type="checkbox" 
+                id="ageverif" 
+                name="ageverif" 
+                value="ageverif">
+                <label for="ageverif"> 
+                    Are you at least 13 years of age?
+                </label>
+                </div>
 
-                <input type="checkbox" id="ageverif" name="ageverif" value="ageverif">
-                <label for="ageverif"> Are you at least 13 years of age?</label><br>
-
-                <input type="checkbox" id="tos" name="tos" value="tos">
+                <div class="checkbox-group">
+                <input type="checkbox" 
+                id="tos" 
+                name="tos" 
+                value="tos">
                 <label for="tos"> I agree to the 
                     <a href="url">Terms of Service</a>
-                </label><br>
+                </label>
+                </div>
 
-                <input type="submit" value="Register User">
+                <div>
+                    <input class="form-button reset-button" type="reset" value="Clear">
+                    <input class="form-button submit-button" type="submit" value="Register User">
+                </div>
 
             </form>
         </main>
 
 
 
-        <footer>
+        <footer class="site-footer">
             Ishmael Gravatt &copy; 2023
         </footer>
     </body>

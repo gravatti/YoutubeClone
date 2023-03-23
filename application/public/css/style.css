@@ -1,8 +1,129 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+  --site-bg: #2F4550;
+  --footer-header-bg: #586F7C;
+  --text-rounded-corners: .35rem;
+  --text-color: #F4F4F9;
 }
 
-a {
-  color: #00B7FF;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+background-color: var(--site-bg);
+margin: 0;
+}
+
+header {
+  background-color: var(--footer-header-bg);
+}
+
+header h1 {
+  color: #000000;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 40%;
+  color: #F4F4F9;
+  }
+
+nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+}
+
+ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+ul li {
+  padding: 4px 8px;
+}
+
+form {
+display: grid;
+grid-auto-flow: row;
+gap: 17px;
+width: 50%;
+}
+
+.input-text {
+padding: 12px;
+border: 1px solid #cacacaca;
+border-radius: 16px;
+box-shadow: 0px 0px 4px black;
+}
+
+
+.site-footer {
+color: #000000;
+background-color: var(--footer-header-bg);
+text-align: center;
+padding: 12px;
+font-size: 1.2rem;
+}
+
+.form-button {
+  color: #F4F4F9;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 1rem;
+}
+
+.reset-button {
+  background-color: #A69CAC;
+}
+
+.submit-button {
+  background-color: #161B33;
+}
+
+.video-display {
+  display: grid;
+  place-items: center;
+}
+
+.comment-section {
+  display: grid;
+  place-items: center;
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  background-color: slategray;
+  font: 1.4em;
+  color: whitesmoke;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.checkbox-group {
+  color: #F4F4F9;
+  text-decoration: none;
+}
+
+.label {
+  color: #CAC4CE
+}
+
+h2 {
+  color: #F4F4F9;
+}
+
+.text-color {
+  color: var(--text-color);
+}
+
+
+

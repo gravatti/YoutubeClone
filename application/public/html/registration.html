@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
         <title>Registration</title>
     </head>
     <body>
@@ -23,40 +24,77 @@
         <main>
             <h2>Registration Form</h2>
             <form>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" 
-                placeholder="Email">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input
+                    class="input-text"
+                    type="text" 
+                    name="email" 
+                    id="email" 
+                    placeholder="Email">
+                </div>
 
+                <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" 
-                placeholder="Username">
+                <input
+                    class="input-text" 
+                    type="text"
+                    name="username" 
+                    id="username" 
+                    placeholder="Username">
+                </div>
 
+                <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" 
+                <input 
+                class="input-text" 
+                type="password" 
+                name="password" 
+                id="password" 
                 placeholder="Password">
+                </div>
 
-                <label for="confirmpassword">Password</label>
-                <input type="password" name="confirmpassword" id="confirmpassword" 
+                <div class="input-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input 
+                class="input-text" 
+                type="password" 
+                name="confirmpassword" 
+                id="confirmpassword" 
                 placeholder="Confirm Password">
+                </div>
 
-                <br>
+                <div class="checkbox-group">
+                <input type="checkbox" 
+                id="ageverif" 
+                name="ageverif" 
+                value="ageverif">
+                <label for="ageverif"> 
+                    Are you at least 13 years of age?
+                </label>
+                </div>
 
-                <input type="checkbox" id="ageverif" name="ageverif" value="ageverif">
-                <label for="ageverif"> Are you at least 13 years of age?</label><br>
-
-                <input type="checkbox" id="tos" name="tos" value="tos">
+                <div class="checkbox-group">
+                <input type="checkbox" 
+                id="tos" 
+                name="tos" 
+                value="tos">
                 <label for="tos"> I agree to the 
-                    <a href="url">Terms of Service</a>
-                </label><br>
+                    <a href="url" class="label">Terms of Service</a>
+                </label>
+                </div>
 
-                <input type="submit" value="Register User">
+                <div>
+                    <input class="form-button reset-button" type="reset" value="Clear">
+                    <input class="form-button submit-button" type="submit" value="Register User">
+                </div>
 
             </form>
         </main>
 
 
 
-        <footer>
+        <footer class="site-footer">
             Ishmael Gravatt &copy; 2023
         </footer>
     </body>

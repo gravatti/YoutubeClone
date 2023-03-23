@@ -1,7 +1,8 @@
 :root {
-  --site-bg: whitesmoke;
-  --footer-header-bg: blue;
+  --site-bg: #2F4550;
+  --footer-header-bg: #586F7C;
   --text-rounded-corners: .35rem;
+  --text-color: #F4F4F9;
 }
 
 *,
@@ -25,7 +26,7 @@ header {
 }
 
 header h1 {
-  color: whitesmoke;
+  color: #000000;
 }
 
 .input-group {
@@ -33,6 +34,7 @@ header h1 {
   flex-direction: column;
   gap: 4px;
   width: 40%;
+  color: #F4F4F9;
   }
 
 nav ul {
@@ -42,7 +44,7 @@ nav ul {
 }
 
 ul li a {
-  color: white;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -66,7 +68,7 @@ box-shadow: 0px 0px 4px black;
 
 
 .site-footer {
-color: whitesmoke;
+color: #000000;
 background-color: var(--footer-header-bg);
 text-align: center;
 padding: 12px;
@@ -74,29 +76,54 @@ font-size: 1.2rem;
 }
 
 .form-button {
-  color: white;
+  color: #F4F4F9;
   border: none;
   padding: 6px 10px;
   border-radius: 1rem;
 }
 
 .reset-button {
-  background-color: lightcoral;
+  background-color: #A69CAC;
 }
 
 .submit-button {
-  background-color: cadetblue;
+  background-color: #161B33;
 }
 
-.login-button {
-  background-color: cadetblue;
+.video-display {
+  display: grid;
+  place-items: center;
+}
+
+.comment-section {
+  display: grid;
+  place-items: center;
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  background-color: slategray;
+  font: 1.4em;
+  color: whitesmoke;
+  border-radius: 1rem;
+  text-align: center;
 }
 
 .checkbox-group {
-  
+  color: #F4F4F9;
+  text-decoration: none;
 }
 
-a {
-color: #00B7FF;
+.label {
+  color: #CAC4CE
 }
+
+h2 {
+  color: #F4F4F9;
+}
+
+.text-color {
+  color: var(--text-color);
+}
+
+
 

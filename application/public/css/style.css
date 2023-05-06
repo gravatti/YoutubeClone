@@ -132,3 +132,43 @@ h2 {
 .invalid-text {
   outline: solid red
 }
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  width: 200px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-cost {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}

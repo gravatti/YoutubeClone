@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css">
+        <script defer src="../js/validation.js"></script>
         <title>Registration</title>
     </head>
     <body>
@@ -23,7 +24,7 @@
         </header>
         <main>
             <h2>Registration Form</h2>
-            <form>
+            <form id="reg-form">
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input
@@ -68,7 +69,8 @@
                 <input type="checkbox" 
                 id="ageverif" 
                 name="ageverif" 
-                value="ageverif">
+                value="ageverif"
+                required>
                 <label for="ageverif"> 
                     Are you at least 13 years of age?
                 </label>
@@ -78,7 +80,8 @@
                 <input type="checkbox" 
                 id="tos" 
                 name="tos" 
-                value="tos">
+                value="tos"
+                required>
                 <label for="tos"> I agree to the 
                     <a href="url" class="label">Terms of Service</a>
                 </label>

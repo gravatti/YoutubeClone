@@ -4,8 +4,18 @@
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
     <link rel='stylesheet' href='/public/css/style.css' />
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="/public/js/index.js"></script>
+        <script defer src="/public/js/validation.js"></script>
   </head>
   <body>
-    {{{body}}}
+    <div id="container">
+      {{nav}}
+      {{> header}}
+      {{{body}}}
+      {{> footer}}
+    </div>
   </body>
 </html>

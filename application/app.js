@@ -17,7 +17,11 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      //isEmptyObject: function(obj) {
+        //return true
+      //}
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
@@ -32,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(favicon(__dirname + '/public/favicon.ico'));
+///localhost:3000
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js

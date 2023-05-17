@@ -1,0 +1,72 @@
+<main>
+    <h2>Registration Form</h2>
+    <form id="reg-form">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input
+            class="input-text"
+            type="text" 
+            name="email" 
+            id="email" 
+            placeholder="Email">
+        </div>
+
+        <div class="input-group">
+        <label for="username">Username</label>
+        <input
+            class="input-text" 
+            type="text"
+            name="username" 
+            id="username" 
+            placeholder="Username">
+        </div>
+
+        <div class="input-group">
+        <label for="password">Password</label>
+        <input 
+        class="input-text" 
+        type="password" 
+        name="password" 
+        id="password" 
+        placeholder="Password">
+        </div>
+
+        <div class="input-group">
+        <label for="confirmpassword">Confirm Password</label>
+        <input 
+        class="input-text" 
+        type="password" 
+        name="confirmpassword" 
+        id="confirmpassword" 
+        placeholder="Confirm Password">
+        </div>
+
+        <div class="checkbox-group">
+        <input type="checkbox" 
+        id="ageverif" 
+        name="ageverif" 
+        value="ageverif"
+        required>
+        <label for="ageverif"> 
+            Are you at least 13 years of age?
+        </label>
+        </div>
+
+        <div class="checkbox-group">
+        <input type="checkbox" 
+        id="tos" 
+        name="tos" 
+        value="tos"
+        required>
+        <label for="tos"> I agree to the 
+            <a href="url" class="label">Terms of Service</a>
+        </label>
+        </div>
+
+        <div>
+            <input class="form-button reset-button" type="reset" value="Clear">
+            <input class="form-button submit-button" type="submit" value="Register User">
+        </div>
+
+    </form>
+</main>

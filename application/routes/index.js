@@ -3,32 +3,32 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'CSC 317 App', name:"Ishmael" });
+  res.render('index', { title: 'CSC 317 App', js:["index.js"]});
 });
 
-router.use(function(req,res, next) {
-  console.log("I am a middleware from index.js");
-  next();
-})
+// router.use(function(req,res, next) {
+//  console.log("I am a middleware from index.js");
+//  next();
+// })
 
 router.get('/login', function(req, res) {
-  res.render('login');
+  res.render('login', {title: 'Login', js: ["validation.js"]});
 })
 
 router.get('/registration', function(req, res) {
-  res.render('registration');
+  res.render('registration', {title: 'Registration', js: ["validation.js"]});
 })
 
 router.get('/postvideo', function(req, res) {
-  res.render('postvideo');
+  res.render('postvideo', {title: 'Post Video'});
 })
 
 router.get('/profile', function(req, res) {
-  res.render('profile');
+  res.render('profile', {title: 'Profile'});
 })
 
-router.get('/viewpost', function(req, res) {
-  res.render('viewpost');
+router.get('/viewpost/:id(\\d+)', function(req, res) {
+  res.render('viewpost', {title: 'View Post'});
 })
 
 module.exports = router;

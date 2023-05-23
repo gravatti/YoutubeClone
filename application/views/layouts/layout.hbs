@@ -18,10 +18,46 @@
   </head>
   <body>
     <div id="container">
-      {{nav}}
+      {{#if (nonEmptyObject messages)}}
+        {{> flashmessage this}}
+      {{/if}}
       {{> header}}
+      {{nav}}
       {{{body}}}
       {{> footer}}
     </div>
   </body>
+  <script>
+    // Get the button and dropdown content elements
+    var dropdownBtn = document.getElementById("dropdownBtn");
+    var dropdownContent = document.getElementById("myDropdown");
+
+    // Toggle dropdown visibility when button is clicked
+    dropdownBtn.addEventListener("click", function() {
+      dropdownContent.classList.toggle("show");
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener("click", function(event) {
+      if (!event.target.matches(".dropbtn")) {
+        if (dropdownContent.classList.contains("show")) {
+          dropdownContent.classList.remove("show");
+        }
+      }
+    });
+  </script>
+
+  <script>
+    // Get the flash message container
+  var flashMessage = document.getElementById("flash-message");
+
+  // Add the "show" class to display the flash message
+  flashMessage.classList.add("show");
+
+  // Set a timeout to remove the flash message after a certain duration
+  setTimeout(function() {
+    flashMessage.classList.remove("show");
+  }, 3000); // Adjust the duration (in milliseconds) as needed
+
+  </script>
 </html>

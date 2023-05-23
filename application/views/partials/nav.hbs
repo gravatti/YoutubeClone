@@ -1,10 +1,14 @@
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/registration">Registration</a></li>
         <li><a href="/postvideo">Post Video</a></li>
-        <li><a href="/viewpostl">View Post</a></li>
-        <li><a href="/profile">View Profile</a></li>
+        <li><a href="/viewpost">View Post</a></li>
+        <li>{{#if isLoggedIn}}
+                {{> userdropdown}}
+            {{else}}
+                <li><a href="/registration">Registration</a></li>
+                <li><a href="/login">Login</a></li>
+            {{/if}}
+        </li>
     </ul>
 </nav>

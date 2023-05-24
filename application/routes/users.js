@@ -2,21 +2,22 @@ var express = require('express');
 var router = express.Router();
 var db = require('../conf/database');
 var bcrypt = require('bcrypt')
+var { isLoggedIn, isMyProfile } = require("../middleware/auth");
+const { isUsernameUnique, usernameCheck, passwordCheck, emailCheck, tosCheck, ageCheck, isEmailUnique } = require('../middleware/validation');
 
 //localhost:3000/users/registration
-router.post('/registration', async function(req, res, next){
+router.post(
+  '/registration', 
+  usernameCheck,
+  passwordCheck,
+  emailCheck,
+  //tosCheck,
+  //ageCheck, 
+  isUsernameUnique,
+  isEmailUnique,
+  async function(req, res, next){
   var {email, username, password} = req.body;
   try {
-    //check username unique
-    var [rows, fields] = await db.execute(`select id from users where username=?;`,[username])
-    if (rows && rows.length > 0) {
-      return res.redirect('/registration');
-    }
-    //check email unique
-    var [rows, fields] = await db.execute(`select id from users where email=?;`,[email])
-    if (rows && rows.length > 0) {
-      return res.redirect('/registration');
-    }
 
     var hashedPassword = await bcrypt.hash(password, 3);
 
@@ -52,7 +53,7 @@ router.post('/login', async function(req, res, next) {
       // Send to profile if user exists, reattempt login otherwise 
       var user = rows[0];
       if (!user) {
-        req.flash("error", `Log In Failed: Invalid Username or Password`)
+        req.flash("error", `Log In Failed: User does not exist.`)
         req.session.save(function(err){
           return res.redirect('/login');
         })
@@ -91,7 +92,8 @@ router.use(function(req,res,next) {
   }
 })
 
-router.get('/profile/:id(\\d+)', function(req, res) {
+router.get('/profile/:id(\\d+)',isLoggedIn ,isMyProfile ,function(req, res) {
+  console.log(req.params)
   res.render('profile', {title: 'Profile'});
 })
 

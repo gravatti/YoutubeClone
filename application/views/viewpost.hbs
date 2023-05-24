@@ -24,6 +24,12 @@
                 <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment">
             </div>
 
+            <div class="comments">
+                {{#each currentPost.comments}}
+                    {{>comment this}}
+                {{/each}}
+            </div>
+
 
         </main>
     </body>

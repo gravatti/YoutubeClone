@@ -24,8 +24,4 @@ router.get('/postvideo',isLoggedIn , function(req, res) {
   res.render('postvideo', {title: 'Post Video'});
 })
 
-router.get('/viewpost', function(req, res) {  // /:id(\\d+)
-  res.render('viewpost', {title: 'View Post'});
-})
-
 module.exports = router;

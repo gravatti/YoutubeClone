@@ -147,8 +147,8 @@ function verifySubmit(){
 });
 }
 
-//validateForms();
-//verifySubmit();
+validateForms();
+verifySubmit();
 
 //Test email and password
 //jane.doe@example.com

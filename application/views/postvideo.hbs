@@ -1,20 +1,31 @@
 <main>
     <h2>Post Video</h2>
-    <form>
+    <form id="post-image" class="input-form"
+        action="/posts/create"
+        method="POST"
+        enctype="multipart/form-data">
         <div>
             <label for="videoUpload" class="text-color">Upload Video</label>
-            <input class="form-button" type = "file" name = "upload" accept = "video/*" />
+            <input class="form-button" type = "file" name = "uploadVideo" accept = "video/*" />
         </div>
 
         <div class="input-group">
             <label for="postTitle">Title</label>
-            <input class="input-text" type="text" name="postTitle" id="postTitle" 
+            <input 
+            class="input-text" 
+            type="text" 
+            name="postTitle" 
+            id="postTitle" 
             placeholder="Enter Title">
         </div>
 
         <div class="input-group">
             <label for="description">Description</label>
-            <input class="input-text" type="text" name="description" id="description" 
+            <input 
+            class="input-text" 
+            type="text" 
+            name="description" 
+            id="description" 
             placeholder="Enter Description">
         </div>
 

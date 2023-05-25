@@ -1,36 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-    </head>
-    <body>
-        
-        <main>
-            <h2 class="video-display">Video Title</h2> 
-            <author class="text-color">Video Author</author>
-            <div class="video-display">
-                <video width="320" height="240" controls>
-                    <source src="movie.mp4" type="video/mp4">
-                </video>
-            </div>
-            
-            <time datetime="2023-02-28 20:00" class="text-color">Date Created</time>
+<main class="post-container">
+    {{log this}}
+    <div class="post-info">
+        <h2 class="post-title">{{currentPost.title}}</h2> 
+        <div class="post-author-date">
+            <p class="author">{{currentPost.username}}</p>
+            <p class="date-posted">{{currentPost.createdAt}}</p>
+        </div>
+        <p class="post-description">
+            {{currentPost.description}}
+        </p>
+    </div>
 
-            <div class="video-display">
-                <textarea class="comment-section"> 
-                    Enter Comment
-                </textarea>
-                <br>
-                <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment">
-            </div>
+    <div class="video-display">
+        <video width="320" height="240" controls>
+            <source src="/{{currentPost.video}}" type="video/mp4">
+        </video>
+    </div>
 
-            <div class="comments">
-                {{#each currentPost.comments}}
-                    {{>comment this}}
-                {{/each}}
-            </div>
+    <div class="comment-section">
+        <!-- <time datetime="2023-02-28 20:00" class="text-color">Date Created</time> -->
+        <div class="comment-box">
+            <textarea id="comment-text" class="comment-box-text"></textarea> 
+            <i
+            id="comment-button"
+            class="fa fa-comment comment-box-button form-button submit-button"
+            aria-hidden="true"
+            data-postid="{{currentPost.id}}">
+            </i>
+            <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment">
+        </div>
+
+        <div class="comments">
+            {{#each currentPost.comments}}
+                {{>comment this}}
+            {{/each}}
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('comment-button').addEventListener('click', function(ev){
+            let commentText = document.getElementById("comment-text").value;
+            if(!commentText) return;
+            console.log(ev.currentTarget.dataset.postid);
+            var postId = ev.currentTarget.dataset.postid;
+            fetch("/comments/create", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify(
+                        {
+                        postId: postId,
+                        comment: commentText
+                        }
+                    )
+            })
+            .then(response => {
+                console.log(response)
+                return response.json()
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => console.log(err));
+        })
+
+    </script>
 
 
-        </main>
-    </body>
-</html>
+</main>

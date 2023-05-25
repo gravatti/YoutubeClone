@@ -1,5 +1,6 @@
 var pathToFFMPEG = require('ffmpeg-static');
 var exec = require('child_process').exec;
+var db = require("../conf/database");
 
 module.exports = {
     makeThumbnail: function(req,res,next){
@@ -21,14 +22,65 @@ module.exports = {
     getPostsForUserBy: function(req,res,next){
 
     },
-    getPostById:  function(req,res,next){
-        res.locals.currentPost = rows[0];
+    getPostById: async function(req,res,next){
+        var {id} = req.params;
+        try {
+            let [rows, _] = await db.execute(
+                `select u.username, p.video, p.title, p.description, p.id, p.createdAt 
+                from posts p
+                JOIN users u 
+                ON p.fk_userId = u.id
+                WHERE p.id=?;`,
+                [id]
+            );
+            const post = rows[0];
+            if (!post) {
+                req.flash("error", `Post does not exist.`);
+                req.session.save(function(err) {
+                    if (err) next(err);
+                    res.redirect('/')
+                })
+                //next();  
+            } else {
+                res.locals.currentPost = post;
+                next();
+            }
+        } catch (error) {
+            next(error);
+        }
     },
-    getCommentsForPostById:  function(req,res,next){
 
-        res.locals.currentPost.comments = rows;
+    getCommentsForPostById: async function(req,res,next){
+        var {id} = req.params;
+        try {
+            let [rows, _] = await db.execute(
+                `select u.username, c.text, c.createdAt 
+                from comments c
+                JOIN users u 
+                ON c.fk_authorId = u.id
+                WHERE c.fk_postId=?;`,
+                [id]
+            );
+            res.locals.currentPost.comments = rows;
+            next();
+            
+        } catch (error) {
+            next(error);
+        }
+
     },
-    getRecentPosts: function(req,res,next){
+    getRecentPosts: async function(req,res,next){
+        try {
+            var [rows, _ ] = await db.execute(
+                `SELECT * FROM posts ORDER BY createdAt DESC LIMIT 3;`
+            );
+
+            res.locals.posts = rows;
+            next();
+            
+        } catch (error) {
+            next(error);
+        }
        // `SELECT * FROM posts ORDER BY createdAt AS LIMIT 8`
     }
 }

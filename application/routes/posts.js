@@ -3,7 +3,7 @@ var router = express.Router();
 var multer = require('multer');
 var db = require("../conf/database");
 const { isLoggedIn } = require('../middleware/auth');
-const { makeThumbnail } = require('../middleware/posts');
+const { makeThumbnail, getRecentPosts, getPostById, getCommentsForPostById } = require('../middleware/posts');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -50,12 +50,33 @@ router.post(
 
 });
 
-router.get('/:id(\\d+)', function(req, res) {  // /:id(\\d+)
+router.get('/:id(\\d+)', getPostById, getCommentsForPostById, function(req, res) {  // /:id(\\d+)
     res.render('viewpost', {title: `View Post ${req.params.id}`, js:["viewpost.js"]});
 });
 
-router.get("/search", function(req,res,next){
+router.get("/search",getRecentPosts, async function(req,res,next){
+    var {searchValue} = req.query;
+    try {
+        var [rows, _ ] = await db.execute(
+            `select id,title,thumbnail, concat_ws(' ', title, description) as haystack 
+            from posts
+            having haystack like ?;`,
+            [`%${searchValue}%`]
+        );
 
+        if (rows && rows.length == 0) {
+            return res.render('index');
+            
+        } else {
+            res.locals.posts = rows;
+            return res.render('index');
+        }
+        
+    } catch (error) {
+        next(error);
+    }
+
+    //console.log(req.query);
 });
 
 router.get("/delete", function(req,res,next){

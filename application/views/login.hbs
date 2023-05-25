@@ -1,0 +1,33 @@
+<main class="form-container">
+    <h2>Login Form</h2>
+    <form id="login-form" class="input-form"
+        action="/users/login"
+        method="POST"
+        enctype="application/x-www-form-urlencoded">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input
+            class="input-text" 
+            type="text" 
+            name="username" 
+            id="username" 
+            placeholder="username"
+            name="username">
+        </div>
+        
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input 
+            class="input-text" 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="password"
+            name="password" >
+        </div>
+
+        <div>
+            <input class="form-button submit-button" type="submit" value="Log in">
+        </div>
+    </form>
+</main>

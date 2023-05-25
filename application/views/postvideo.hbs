@@ -1,0 +1,45 @@
+<main>
+    <h2>Post Video</h2>
+    <form id="post-image" class="input-form"
+        action="/posts/create"
+        method="POST"
+        enctype="multipart/form-data">
+        <div>
+            <label for="videoUpload" class="text-color">Upload Video</label>
+            <input class="form-button" type = "file" name = "uploadVideo" accept = "video/*" />
+        </div>
+
+        <div class="input-group">
+            <label for="postTitle">Title</label>
+            <input 
+            class="input-text" 
+            type="text" 
+            name="postTitle" 
+            id="postTitle" 
+            placeholder="Enter Title">
+        </div>
+
+        <div class="input-group">
+            <label for="description">Description</label>
+            <input 
+            class="input-text" 
+            type="text" 
+            name="description" 
+            id="description" 
+            placeholder="Enter Description">
+        </div>
+
+        <div>
+            <p class="text-color">By checking the box below, you agree to the following</p>
+
+            <input class="checkbox-group" type="checkbox" id="aup" name="aup" value="aup">
+            <label for="aup"> 
+            <a href="url" class="label">Terms and Conditions</a> 
+        </label>
+        </div>
+
+        <div>
+            <input class="form-button submit-button" type="submit" value="Post Video">
+        </div>
+    </form>
+</main>

@@ -1,2 +1,9 @@
-<h1>{{title}}</h1>
-<p>Hello {{ name }},Welcome to {{title}}</p>
+<main>
+    <h2>Main Page</h2> 
+    <div class="video-list">
+        {{#each posts}}
+            {{> card this}}
+        {{/each}}
+    </div>
+</main>
+

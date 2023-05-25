@@ -13,6 +13,7 @@ router.post('/create', isLoggedIn, async function(req, res, next){
             `INSERT INTO comments (text,fk_postId,fk_authorId) VALUE (?,?,?)`,
             [comment,postId,userId]
         );
+        console.log(insertResult);
 
         if (insertResult && insertResult.affectedRows == 1) {
             return res.status(201).json({

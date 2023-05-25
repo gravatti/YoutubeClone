@@ -32,7 +32,7 @@
             <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment"> -->
         </div>
 
-        <div class="comments">
+        <div id="comments" class="comments">
             {{#each currentPost.comments}}
                 {{>comment this}}
             {{/each}}
@@ -65,6 +65,7 @@
             })
             .then(data => {
                 console.log(data);
+                var comments = document.getElementById('comments')
                 let commentFragment = document.createElement('template');
                 commentFragment.innerHTML = 
                 `<div class="comment">
@@ -74,9 +75,10 @@
                         datesStyle: "long",
                         timeStyle: "medium"
                         })}</span>
-                    <div class="comment-text">${data.comment}
+                    <div class="comment-text">${data.commentText}
                     </div>
-                    </div>`
+                    </div>`;
+                comments.append(commentFragment.content.firstChild);
             })
             .catch(err => console.log(err));
         })

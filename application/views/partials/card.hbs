@@ -1,10 +1,17 @@
-<div class="product-card">
+<div class="video-card">
     {{log this}}
     <a href="/posts/{{this.id}}">
-        <img class="product-img" src="/{{this.thumbnail}}" alt="{{this.title}}">
+       <!-- <img class="video-img" src="/{{this.thumbnail}}" alt="{{this.title}}"> -->
+        <div class="card-content">
+            <img class="video-img" src="/{{this.thumbnail}}" alt="{{this.title}}">
+            <div class="video-info">
+                <p class="video-title">{{this.title}}</p>
+                <p class="video-description">{{this.description}}</p>
+            </div>
+        </div>
     </a>
-    <div class="product-info">
-        <p class="product-title">{{this.title}}</p>
-        <p class="product-cost">{{this.description}}</p>
-    </div>
+ <!--   <div class="video-info">
+        <p class="video-title">{{this.title}}</p>
+        <p class="video-description">{{this.description}}</p>
+    </div> -->
 </div>

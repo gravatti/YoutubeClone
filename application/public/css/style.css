@@ -360,7 +360,120 @@ h2 {
   border-radius: 4px;
 }
 
+.post-info {
+  display: none;
+}
 
+.post-info.show {
+  display: block;
+}
+
+.comment-box-text {
+  color: #F4F4F9;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 1rem;
+  background-color: #2B2E4A;
+  resize: vertical;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  background-color: #2B2E4A;
+  color: #F4F4F9;
+  padding: 10px;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+}
+
+.comment-section {
+  max-height: 400px; /* Adjust the maximum height as needed */
+  overflow-y: auto; /* Enable vertical scrolling when necessary */
+}
+
+.video-display {
+  background-color: #2B2E4A;
+  color: #F4F4F9;
+  padding: 10px;
+  border-radius: 1rem;
+  margin-top: 20px;
+}
+
+.video-info {
+  background-color: #2B2E4A;
+  color: #F4F4F9;
+  padding: 10px;
+  border-radius: 1rem;
+  margin-top: 20px;
+}
+
+.post-info {
+  background-color: #2B2E4A;
+  color: #F4F4F9;
+  padding: 20px;
+  border-radius: 1rem;
+  margin-top: 20px;
+}
+
+
+
+.post-info {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.post-info {
+  max-height: 200px; /* Adjust the height as needed */
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/*Front page*/
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-card {
+  width: 200px;
+  margin: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-img {
+  width: 100%;
+  height: auto;
+}
+
+.video-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.video-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.video-description {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
 
 
 

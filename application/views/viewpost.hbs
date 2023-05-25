@@ -1,7 +1,16 @@
 <main class="post-container">
-    {{log this}}
-    <div class="post-info">
-        <h2 class="post-title">{{currentPost.title}}</h2> 
+   <!-- <h2 class="post-title">{{currentPost.title}}</h2> -->
+    <div class="video-display">
+        <h2 class="video-title">{{currentPost.title}}</h2>
+        <video width="320" height="240" controls>
+            <source src="/{{currentPost.video}}" type="video/mp4">
+        </video>
+    </div>
+    <button id="info-button" class="info-box-button form-button submit-button" aria-hidden="true">
+        <i class="fa fa-info-circle"></i>
+        Info
+    </button>
+    <div id="post-info" class="post-info">
         <div class="post-author-date">
             <p class="author">{{currentPost.username}}</p>
             <p class="date-posted">{{currentPost.createdAt}}</p>
@@ -11,23 +20,16 @@
         </p>
     </div>
 
-    <div class="video-display">
-        <video width="320" height="240" controls>
-            <source src="/{{currentPost.video}}" type="video/mp4">
-        </video>
-    </div>
-
     <div class="comment-section">
-        <!-- <time datetime="2023-02-28 20:00" class="text-color">Date Created</time> -->
         <div class="comment-box">
             <textarea id="comment-text" class="comment-box-text"></textarea> 
-            <i
-            id="comment-button"
-            class="fa fa-comment comment-box-button form-button submit-button"
-            aria-hidden="true"
-            data-postid="{{currentPost.id}}">
-            </i>
-            <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment">
+            <button id="comment-button" class="comment-box-button form-button submit-button" aria-hidden="true" data-postid="{{currentPost.id}}">
+                <i class="fa fa-comment"></i>
+                Post Comment
+            </button>
+
+        <!--    <i id="comment-button" class="fa fa-comment comment-box-button form-button submit-button" aria-hidden="true" data-postid="{{currentPost.id}}"></i>
+            <input class="form-button submit-button" type="submit" name="submit-comment" value="Post Comment"> -->
         </div>
 
         <div class="comments">
@@ -36,6 +38,8 @@
             {{/each}}
         </div>
     </div>
+</main>
+
 
     <script>
         document.getElementById('comment-button').addEventListener('click', function(ev){
@@ -64,6 +68,40 @@
             })
             .catch(err => console.log(err));
         })
+
+    </script>
+
+    <script>
+        // Get the info button and post info elements
+        const infoButton = document.getElementById('info-button');
+        const postInfo = document.querySelector('.post-info');
+
+        // Add event listener to the info button
+        infoButton.addEventListener('click', () => {
+        // Toggle the visibility of the post info section
+        postInfo.classList.toggle('show');
+});
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        var infoButton = document.getElementById('info-button');
+        var postInfo = document.getElementById('post-info');
+
+        infoButton.addEventListener('click', function() {
+            if (postInfo.style.display === 'none') {
+            postInfo.style.display = 'block';
+            } else {
+            postInfo.style.display = 'none';
+            }
+        });
+
+        postInfo.addEventListener('click', function() {
+            postInfo.style.display = 'none';
+            infoButton.style.display = 'inline-block';
+        });
+        });
 
     </script>
 

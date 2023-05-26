@@ -1,27 +1,23 @@
 <nav>
-    <ul>
-        <li><a href="/">Home</a></li>
-
-        <li class="search-bar">
-            <form 
-                action="/posts/search"
-                method="GET"
-                enctype="application/x-www-form-urlencoded">
-                <input
-                id="search-text"
-                class="search-text"
-                name="searchValue"
-                type="text">
-            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-            </form>
-        </li> 
-        <li>{{#if isLoggedIn}}
-                <li><a href="/postvideo">Post Video</a></li>
-                {{> userdropdown}}
-            {{else}}
-                <li><a href="/registration">Registration</a></li>
-                <li><a href="/login">Login</a></li>
-            {{/if}}
-        </li>
-    </ul>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li class="search-bar">
+      <form action="/posts/search" method="GET" enctype="application/x-www-form-urlencoded">
+        <div class="search-container">
+          <input id="search-text" class="search-input" name="searchValue" type="text" placeholder="Search...">
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </li>
+    {{#if isLoggedIn}}
+      <li><a href="/postvideo">Post Video</a></li>
+      {{> userdropdown}}
+    {{else}}
+      <li><a href="/registration">Registration</a></li>
+      <li><a href="/login">Login</a></li>
+    {{/if}}
+  </ul>
 </nav>
+

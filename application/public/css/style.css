@@ -133,45 +133,7 @@ h2 {
   outline: solid red
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
 
-.product-card {
-  width: 200px;
-  margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.product-img {
-  width: 100%;
-  height: auto;
-}
-
-.product-info {
-  padding: 10px;
-  text-align: center;
-}
-
-.product-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.product-cost {
-  font-size: 16px;
-  font-weight: bold;
-  color: green;
-}
 
 /* Dropdown container */
 .dropdown {
@@ -245,52 +207,6 @@ h2 {
   opacity: 1;
   transform: translateY(0);
 }
-
-
-/*Search*/
-.search-bar {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-}
-
-.search-bar form {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.search-text {
-  border: none;
-  border-radius: 4px;
-  padding: 8px;
-  margin-right: 4px;
-  font-size: 14px;
-  flex-grow: 1;
-}
-
-.search-button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.search-button i {
-  color: #555;
-}
-
-.search-text:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
-}
-
-.search-button:hover i {
-  color: #007bff;
-}
-
-
 
 /*View Post*/
 .post-container {
@@ -476,24 +392,6 @@ h2 {
 }
 
 
-
-/*Profile Page*/
-/* Style the <username> element */
-.username {
-  font-weight: bold;
-  font-size: 24px;
-  color: #333; /* Change the color to your preference */
-  margin-bottom: 10px;
-}
-
-/* Style the <email> element */
-.email {
-  display: block;
-  font-size: 16px;
-  color: #666; /* Change the color to your preference */
-  margin-bottom: 20px;
-}
-
 /*Nav*/
 /* Style the navigation bar */
 nav {
@@ -522,30 +420,7 @@ nav a:hover {
   background-color: #555;
 }
 
-/* Style the search bar */
-.search-bar {
-  margin-left: auto;
-}
-
-/* Style the search input */
-.search-text {
-  padding: 4px;
-}
-
-/* Style the search button */
-.search-button {
-  padding: 4px;
-  background-color: #555;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
 /* Style the user dropdown */
-.userdropdown {
-  /* Add your styles for the user dropdown here */
-}
-
 /* Style the dropdown container */
 .dropdown {
   position: relative;
@@ -624,29 +499,57 @@ nav a:hover {
   background-color: #555;
 }
 
-/* Style the search bar */
-.search-bar {
-  margin-left: auto;
+/*Search Bar*/
+/* Style the search container */
+.search-container {
+  background: #fff;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: width 0.8s;
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2),
+              inset -4px -4px 6px 0 rgba(255,255,255,.2),
+              inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
 }
 
 /* Style the search input */
-.search-text {
-  padding: 4px;
+.search-container .search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 0;
+  font-weight: 500;
+  font-size: 16px;
+  transition: width 0.8s;
+  flex-grow: 1;
 }
 
 /* Style the search button */
-.search-button {
-  padding: 4px;
-  background-color: #555;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-/* Style the search button icon */
-.search-button i {
-  color: #fff;
-  font-size: 16px;
+.search-container .search-btn {
+  color: #5cbdbb;
 }
 
 
+
+/* Expand the search input on hover */
+.search-container:hover .search-input {
+  width: 200px; /* Adjust the width as desired */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 10px;
+}

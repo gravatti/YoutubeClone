@@ -19,8 +19,24 @@ module.exports = {
 
         }
     },
-    getPostsForUserBy: function(req,res,next){
+    getPostsForUserBy: async function(req,res,next){
+        var {id} = req.params;
+        try {
+            var [rows, _ ] = await db.execute(
+                `select u.username, p.video, p.title, p.description, p.id, p.createdAt, p.thumbnail
+                from posts p
+                JOIN users u
+                ON p.fk_userId = u.id
+                WHERE u.id=?;`,
+                [id]
+            );
 
+            res.locals.posts = rows;
+            next();
+            
+        } catch (error) {
+            next(error);
+        }
     },
     getPostById: async function(req,res,next){
         var {id} = req.params;

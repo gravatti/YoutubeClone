@@ -4,6 +4,7 @@ var db = require('../conf/database');
 var bcrypt = require('bcrypt')
 var { isLoggedIn, isMyProfile } = require("../middleware/auth");
 const { isUsernameUnique, usernameCheck, passwordCheck, emailCheck, tosCheck, ageCheck, isEmailUnique } = require('../middleware/validation');
+const { getPostsForUserBy } = require('../middleware/posts');
 
 //localhost:3000/users/registration
 router.post(
@@ -92,7 +93,7 @@ router.use(function(req,res,next) {
   }
 })
 
-router.get('/profile/:id(\\d+)',isLoggedIn ,isMyProfile ,function(req, res) {
+router.get('/profile/:id(\\d+)',isLoggedIn ,isMyProfile ,getPostsForUserBy ,function(req, res) {
   console.log(req.params)
   res.render('profile', {title: 'Profile'});
 })

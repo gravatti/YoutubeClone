@@ -1,8 +1,7 @@
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
-        <!-- <li><a href="/postvideo">Post Video</a></li> <li><a href="/posts">View Post</a></li> -->
-        <!-- <li>{{> searchbar}}</li> -->
+
         <li class="search-bar">
             <form 
                 action="/posts/search"
@@ -13,7 +12,7 @@
                 class="search-text"
                 name="searchValue"
                 type="text">
-            <button type="submit" class="search-button fas fa-search"></button>
+            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
             </form>
         </li> 
         <li>{{#if isLoggedIn}}

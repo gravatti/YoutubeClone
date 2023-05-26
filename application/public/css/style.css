@@ -477,4 +477,176 @@ h2 {
 
 
 
+/*Profile Page*/
+/* Style the <username> element */
+.username {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333; /* Change the color to your preference */
+  margin-bottom: 10px;
+}
+
+/* Style the <email> element */
+.email {
+  display: block;
+  font-size: 16px;
+  color: #666; /* Change the color to your preference */
+  margin-bottom: 20px;
+}
+
+/*Nav*/
+/* Style the navigation bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Style the list inside the navigation bar */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Style the navigation bar links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+/* Apply hover effect to the navigation bar links */
+nav a:hover {
+  background-color: #555;
+}
+
+/* Style the search bar */
+.search-bar {
+  margin-left: auto;
+}
+
+/* Style the search input */
+.search-text {
+  padding: 4px;
+}
+
+/* Style the search button */
+.search-button {
+  padding: 4px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the user dropdown */
+.userdropdown {
+  /* Add your styles for the user dropdown here */
+}
+
+/* Style the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  color: #333;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Apply hover effect to the dropdown links */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content when the dropdown button is hovered */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the navigation items inside the dropdown */
+.nav-items {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+
+/* Style the navigation bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+/* Style the list inside the navigation bar */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Style the navigation bar links */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+/* Apply hover effect to the navigation bar links */
+nav a:hover {
+  background-color: #555;
+}
+
+/* Style the search bar */
+.search-bar {
+  margin-left: auto;
+}
+
+/* Style the search input */
+.search-text {
+  padding: 4px;
+}
+
+/* Style the search button */
+.search-button {
+  padding: 4px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the search button icon */
+.search-button i {
+  color: #fff;
+  font-size: 16px;
+}
+
 
